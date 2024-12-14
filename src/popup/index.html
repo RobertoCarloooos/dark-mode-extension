@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modo Oscuro Universal</title>
+  <link rel="stylesheet" href="./Popup.css" />
+</head>
+<body>
+  <div id="app">
+    <h2>Modo Oscuro</h2>
+    <label>
+      <input type="checkbox" id="toggle-dark-mode" />
+      Activar Modo Oscuro
+    </label>
+    <br />
+    <label for="darkness-level">Nivel de Oscuridad:</label>
+    <input type="range" id="darkness-level" min="0" max="1" step="0.1" />
+    <br />
+    <label for="excluded-sites">Sitios Excluidos:</label>
+    <input type="text" id="excluded-sites" placeholder="ejemplo.com" />
+    <button id="add-site">Agregar</button>
+    <ul id="excluded-sites-list"></ul>
+  </div>
+  <script src="./Popup.js"></script>
+</body>
+</html>
