@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let settings = {};
 
+  // Cargar configuraciones iniciales
   loadSettings((data) => {
     settings = data;
     toggleDarkMode.checked = settings.darkModeEnabled;
@@ -16,17 +17,21 @@ document.addEventListener("DOMContentLoaded", () => {
     renderExcludedSites();
   });
 
-  // Actualizar configuraciones cuando el usuario cambie la opción
+  // Activar/desactivar modo oscuro
   toggleDarkMode.addEventListener("change", () => {
     settings.darkModeEnabled = toggleDarkMode.checked;
     saveSettings(settings);
+    notifyBackgroundScript();
   });
 
+  // Ajustar nivel de oscuridad
   darknessLevelInput.addEventListener("input", () => {
     settings.darknessLevel = parseFloat(darknessLevelInput.value);
     saveSettings(settings);
+    notifyBackgroundScript();
   });
 
+  // Agregar un sitio a la lista de excluidos
   addSiteButton.addEventListener("click", () => {
     const site = excludedSitesInput.value.trim();
     if (site && !settings.excludedSites.includes(site)) {
@@ -34,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       saveSettings(settings);
       renderExcludedSites();
       excludedSitesInput.value = "";
+      notifyBackgroundScript();
     }
   });
 
@@ -43,15 +49,26 @@ document.addEventListener("DOMContentLoaded", () => {
     settings.excludedSites.forEach((site, index) => {
       const li = document.createElement("li");
       li.textContent = site;
+
       const removeButton = document.createElement("button");
       removeButton.textContent = "X";
       removeButton.addEventListener("click", () => {
         settings.excludedSites.splice(index, 1);
         saveSettings(settings);
         renderExcludedSites();
+        notifyBackgroundScript();
       });
+
       li.appendChild(removeButton);
       excludedSitesList.appendChild(li);
+    });
+  }
+
+  // Notificar al script de fondo sobre cambios
+  function notifyBackgroundScript() {
+    chrome.runtime.sendMessage({
+      action: "updateSettings",
+      settings: settings,
     });
   }
 });

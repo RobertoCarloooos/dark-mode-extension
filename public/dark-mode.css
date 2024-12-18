@@ -1,0 +1,81 @@
+/* Fondo general y color de texto */
+body, html {
+  background-color: #121212 !important; /* Fondo oscuro pero no absoluto */
+  color: #e0e0e0 !important; /* Texto claro */
+}
+
+/* Asegurar que los enlaces sean legibles */
+a, a:visited {
+  color: #1e88e5 !important; /* Azul legible */
+  text-decoration: underline !important;
+}
+
+/* Ajustar inputs, selects y botones */
+input, textarea, select, button {
+  background-color: #1c1c1c !important; /* Fondo ligeramente más claro */
+  color: #e0e0e0 !important; /* Texto claro */
+  border: 1px solid #333 !important;
+}
+
+/* Encabezados */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important; /* Texto completamente blanco */
+}
+
+/* Fondos secundarios */
+div, section, article, aside, footer, header, nav {
+  background-color: #1e1e1e !important; /* Fondo secundario */
+}
+
+/* Mejorar contrastes */
+* {
+  border-color: #3c3c3c !important;
+  outline-color: #3c3c3c !important;
+}
+
+/* Imágenes y videos */
+img, video {
+  filter: brightness(1) !important; /* Sin alteraciones */
+}
+
+/* Pop-ups, modales, dropdowns */
+.modal, .popup, .dropdown {
+  background-color: #1e1e1e !important; /* Fondo oscuro */
+  color: #ffffff !important;
+  border: 1px solid #3c3c3c !important;
+}
+
+/* Formularios */
+input, textarea, button {
+  font-size: 14px !important;
+  border-radius: 4px !important;
+}
+
+/* Sombras */
+* {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Mantener las imágenes con su brillo original */
+img, iframe {
+  filter: brightness(1) !important;
+}
+
+/* Asegurar colores en tablas */
+table {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #3c3c3c !important;
+  padding: 8px !important;
+}
+
+/* Fuentes y legibilidad */
+body, p, span, div {
+  font-family: 'Arial', sans-serif !important;
+  line-height: 1.6 !important;
+}
