@@ -1,21 +1,108 @@
+/* Estilo para el fondo y el contenedor principal */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    width: 300px;
-  }
-  h2 {
-    margin-top: 0;
-  }
-  input[type="range"] {
-    width: 100%;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  li {
-    display: flex;
-    justify-content: space-between;
-  }
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;  /* Fondo oscuro */
+  color: #f1f1f1;  /* Texto claro */
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+#app {
+  background: #1e1e1e;  /* Fondo del contenedor */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Título */
+h2 {
+  font-size: 1.6em;
+  color: #00c7b7;  /* Color de título atractivo */
+  text-align: center;
+  margin-top: 0;
+}
+
+/* Estilo para los controles */
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-size: 1.1em;
+  color: #dcdcdc;
+}
+
+/* Estilo para el checkbox */
+input[type="checkbox"] {
+  transform: scale(1.3);  /* Hacer el checkbox un poco más grande */
+  margin-right: 10px;
+}
+
+/* Estilo para el input range */
+input[type="range"] {
+  width: 100%;
+  height: 8px;
+  background: #333;
+  border-radius: 10px;
   
+  outline: none;
+  margin-top: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #00c7b7;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Estilo para el botón */
+button {
+  background-color: #00c7b7;  /* Botón con color llamativo */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #00a88f;  /* Cambio de color al pasar el ratón */
+}
+
+/* Lista de sitios excluidos (aunque esté oculta por ahora) */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  color: #f1f1f1;
+}
+
+li button {
+  background: none;
+  color: #ff5555;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+li button:hover {
+  color: #ff3333;
+}
